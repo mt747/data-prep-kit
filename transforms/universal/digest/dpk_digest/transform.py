@@ -14,32 +14,38 @@ from typing import Any
 
 import pyarrow as pa
 import hashlib
-from data_processing.transform import AbstractBinaryTransform
+from data_processing.transform import AbstractTableTransform
 from data_processing.utils import  TransformUtils
 
 
 
-class DigestTransform(AbstractBinaryTransform):
+class DigestTransform(AbstractTableTransform):
     def __init__(self, config: dict[str, Any]):
         super().__init__(config)
 
         self.algorithm = config.get('digest_algorithm', "sha256")
 
-    def transform_binary(self, 
-            file_name: str, 
-            byte_array: bytes) -> tuple[list[tuple[bytes, str]], dict[str, Any]]:
+    def transform(self, 
+                  table: pa.Table, 
+                  file_name: str = None) -> tuple[list[pa.Table], dict[str, Any]]:
         """
         """        
-        h = hashlib.new(self.algorithm)
-        h.update(byte_array)
-        digest=h.hexdigest()
-        data = [{'file_name':file_name, 'digest':h.hexdigest()}]
-        table = pa.Table.from_pylist(data)
-        parquet=TransformUtils.convert_arrow_to_binary(table=table)
+        tf_digest = []
+        for elt in table['contents'].to_pylist():
+            h = hashlib.new(self.algorithm)
+            h.update(elt.encode('utf-8'))
+            tf_digest.append(h.hexdigest())
 
-        metadata = { "algorithm": self.algorithm}
-        return [(parquet, ".parquet")], metadata
+        table = TransformUtils.add_column(table=table, 
+                                           name='digest', 
+                                           content=tf_digest)
+        
+        metadata = {"nrows": len(table)}
+        return [table], metadata
     
+
+
+
 
 
 
