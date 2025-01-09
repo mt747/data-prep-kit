@@ -1,2 +1,0 @@
-['java', 'py', 'cpp']
-max_depth = 3

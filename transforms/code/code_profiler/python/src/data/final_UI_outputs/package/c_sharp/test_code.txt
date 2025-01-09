@@ -1,2 +1,0 @@
-using MyLib = MyProject.MyNamespace;
-using System;

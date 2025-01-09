@@ -226,6 +226,7 @@ __check_defined = \
 		--platform $(DOCKER_PLATFORM)  			\
 		--build-arg EXTRA_INDEX_URL=$(EXTRA_INDEX_URL)	\
 		--build-arg BASE_IMAGE=$(BASE_IMAGE)  		\
+		--build-arg TRANSFORM_NAME=$(TRANSFORM_NAME)  		\
 		--build-arg DPK_WHEEL_FILE_NAME=$(DPK_WHEEL_FILE_NAME) \
 		--build-arg BUILD_DATE=$(shell date -u +'%Y-%m-%dT%H:%M:%SZ')  	\
 		--build-arg GIT_COMMIT=$(shell git log -1 --format=%h) . 

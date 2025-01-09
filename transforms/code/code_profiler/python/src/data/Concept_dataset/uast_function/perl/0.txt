@@ -1,3 +1,0 @@
-sub ask_user { 
-   print "Hello Geeks!\n"; 
-} 

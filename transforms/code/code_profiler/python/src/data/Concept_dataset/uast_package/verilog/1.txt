@@ -1,2 +1,0 @@
-import a_pkg::*;
-import P::A;

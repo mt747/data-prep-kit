@@ -1,2 +1,0 @@
-['cpp']
-max_depth = 1

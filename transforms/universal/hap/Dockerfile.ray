@@ -6,6 +6,7 @@ RUN pip install --upgrade --no-cache-dir pip
 # install pytest
 RUN pip install --no-cache-dir pytest
 ARG DPK_WHEEL_FILE_NAME
+ARG TRANSFORM_NAME
 
 # Copy and install data processing libraries 
 # These are expected to be placed in the docker context before this is run (see the make image).
@@ -13,10 +14,7 @@ COPY --chown=ray:users data-processing-dist data-processing-dist
 RUN  pip install data-processing-dist/${DPK_WHEEL_FILE_NAME}[ray]
 
 
-#COPY requirements.txt requirements.txt
-#RUN pip install --no-cache-dir -r  requirements.txt
-
-COPY --chown=ray:users dpk_hap/ dpk_hap/
+COPY --chown=ray:users dpk_${TRANSFORM_NAME}/ dpk_${TRANSFORM_NAME}/
 COPY --chown=ray:users requirements.txt requirements.txt 
 RUN pip install --no-cache-dir -r requirements.txt
 

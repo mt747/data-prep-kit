@@ -1,7 +1,0 @@
-// This code will not execute
-console.log('This code will not execute');
-
-/*
-This code will not execute
-console.log('This code will not execute');
-*/

@@ -1,3 +1,0 @@
-import packageName.* 
-import packageName.className 
-import packageName.className as alias 

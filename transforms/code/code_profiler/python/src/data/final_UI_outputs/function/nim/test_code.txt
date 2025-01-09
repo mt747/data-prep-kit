@@ -1,3 +1,0 @@
-proc map(str: string, fun: (char) -> char): string =
-  for c in str:
-    result &= fun(c)

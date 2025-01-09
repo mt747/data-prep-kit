@@ -1,2 +1,0 @@
-one-not-even : Even 1 → ⊥
-one-not-even ()

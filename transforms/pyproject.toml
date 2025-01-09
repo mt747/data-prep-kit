@@ -1,6 +1,6 @@
 [project]
 name = "data_prep_toolkit_transforms"
-version = "1.0.0a2"
+version = "1.0.0a3"
 requires-python = ">=3.10,<3.13"
 keywords = ["transforms", "data preprocessing", "data preparation", "llm", "generative", "ai", "fine-tuning", "llmapps" ]
 description = "Data Preparation Toolkit Transforms using Ray"
@@ -28,6 +28,8 @@ all = { file = [
 "code/license_select/python/requirements.txt",
 "code/code_quality/python/requirements.txt",
 "code/code2parquet/python/requirements.txt",
+
+"code/code_profiler/requirements.txt",
 
 ##### pii_redactor seem to be failing UT
 ## "language/pii_redactor/python/requirements.txt",
@@ -89,7 +91,6 @@ header_cleanser = {file =  ["code/header_cleanser/python/requirements.txt"]}
 license_select = { file = ["code/license_select/python/requirements.txt"]} 
 code_quality = { file = ["code/code_quality/python/requirements.txt"]} 
 code2parquet = {file =  ["code/code2parquet/python/requirements.txt"]}
-code_profiler = { file = ["code/code_profiler/python/requirements.txt"]} 
 
 pii_redactor = { file = ["language/pii_redactor/python/requirements.txt"]} 
 
@@ -115,6 +116,8 @@ web2parquet = { file = ["universal/web2parquet/requirements.txt"]}
 
 similarity = { file = ["language/similarity/requirements.txt"]}
 
+code_profiler = { file = ["code/code_profiler/requirements.txt"]} 
+
 # Does not seem to work for our custom layout
 # copy all files to a single src and let automatic discovery find them
 
@@ -136,6 +139,7 @@ dpk_fdedup = "universal/fdedup/dpk_fdedup"
 dpk_tokenization = "universal/tokenization/dpk_tokenization"
 dpk_similarity = "language/similarity/dpk_similarity"
 dpk_filter = "universal/filter/dpk_filter"
+dpk_code_profiler = "code/code_profiler/dpk_code_profiler"
 
 
 #[tool.setuptools.package-data]
