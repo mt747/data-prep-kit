@@ -39,11 +39,13 @@ Here is a sample [notebook](digest.ipynb)
 
 ## Troubleshooting guide
 
+If applicable 
+
 ### Transforming data using the transform image
 
 If applicable
 
-# Language Identification Ray Transform 
+# Digest Ray Transform 
 
 If applicable
 
