@@ -7,6 +7,10 @@ Please see the set of [transform project conventions](../../README.md#transform-
 ## Summary 
 This transform will calculate the hash value for the content column in a parquet file
 
+## Contributors
+
+- Maroun Touma (touma@us.ibm.com)
+
 ## Configuration and command line Options
 
 The set of dictionary keys holding [DigetTransform](dpk_digest/transform.py) 
