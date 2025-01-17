@@ -13,7 +13,7 @@ This transform will calculate the hash value for the content column in a parquet
 
 ## Configuration and command line Options
 
-The set of dictionary keys holding [DigetTransform](dpk_digest/transform.py) 
+The set of dictionary keys holding [DigestTransform](dpk_digest/transform.py) 
 configuration for values are as follows:
 
 | Key name  | Default  | Description |
@@ -30,7 +30,7 @@ the [python launcher options](../../../data-processing-lib/doc/python-launcher-o
 ---|---|---|
 | --digest_algorithm | DIGEST_ALGORITHM |   the algorithm to use for calculating the hash value.|
 
-Example:
+## Example
 ```
 python -m dpk_digest.runtime --digest_algorithm sha256 --data_local_config "{ 'input_folder' : 'test-data/input', 'output_folder' : 'test-data/output'}"
 ```
@@ -41,17 +41,17 @@ Here is a sample [notebook](digest.ipynb)
 
 ### Transforming data using the transform image
 
-Missing
+If applicable
 
 # Language Identification Ray Transform 
 
-Not Applicable
+If applicable
 
 ## Launched Command Line Options 
 
-Not Applicable
+If applicable
 
 ### Transforming data using the transform image
 
-Not Applicable
+If Applicable
 
